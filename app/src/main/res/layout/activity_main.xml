@@ -100,7 +100,7 @@
                     android:paddingBottom="40dp"
                     app:exampleColor="#33b5e5"
                     app:exampleDimension="24sp"
-                    app:exampleDrawable="@android:drawable/ic_menu_add"
+                    app:exampleDrawable="@android:mipmap/sym_def_app_icon"
                     app:exampleString="@{gameData.express}" />
                 <Button
                     android:layout_width="match_parent"
