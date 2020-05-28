@@ -20,6 +20,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        def dirs = ['p_viewmodel_livedata_databinding', 'p_module', 'p_workmanager_demo']
+        main {
+            dirs.each { dir ->
+                java.srcDir("src/$dir/main/java")
+                res.srcDir("src/$dir/main/res")
+            }
+            manifest.srcFile 'src/p_viewmodel_livedata_databinding/main/AndroidManifest.xml'
+        }
+
+    }
     dataBinding.enabled = true
 
 }

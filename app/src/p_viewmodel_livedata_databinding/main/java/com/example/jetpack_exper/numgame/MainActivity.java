@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.jetpack_exper.R;
 import com.example.jetpack_exper.databinding.ActivityMainBinding;
@@ -24,26 +25,9 @@ public class MainActivity extends AppCompatActivity {
         });
         data.setValue("333");
          binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        final GameViewModel gameData = new GameViewModel(getApplication());
-
-        binding.setGameData(gameData);
-//        binding.result.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                Card36.rightResult = Integer.parseInt(s.toString());
-//                gameData.expressValue();
-//            }
-//        });
+        GameViewModel gameViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())
+                .create(GameViewModel.class);
+        binding.setGameData(gameViewModel);
         binding.setLifecycleOwner(this);
     }
 }
