@@ -21,7 +21,7 @@ android {
         }
     }
     sourceSets {
-        def dirs = ['p_viewmodel_livedata_databinding', 'p_module', 'p_workmanager_demo']
+        def dirs = ['p_viewmodel_livedata_databinding', 'p_module', 'p_workmanager_demo', 'p_room_demo']
         main {
             dirs.each { dir ->
                 java.srcDir("src/$dir/main/java")
@@ -37,8 +37,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    def work_version ="2.3.1"
+    def work_version = "2.3.1"
     api "androidx.work:work-runtime:$work_version"
+
+    //room
+    def room_version = "2.2.5"
+    api "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

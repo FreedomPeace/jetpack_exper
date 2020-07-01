@@ -1,6 +1,7 @@
 package com.example.jetpack_exper;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -16,7 +17,7 @@ public class UploadWork extends Worker {
     public Result doWork() {
         try {
             Thread.sleep(3*60*1000);
-            System.out.println(666);
+            Log.d(WorkManagerActivity.TAG, "666");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

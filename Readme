@@ -1,3 +1,3 @@
 需要插件来优化
 1.针对新建的pin工程目录，AndroidStudio 选中pin工程的包目录，快捷键alt + insert新建的Activity文件
-默认还是会跑到main工程目录下去。
+默认还是会跑到main工程目录下去,。
