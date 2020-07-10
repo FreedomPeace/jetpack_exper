@@ -24,13 +24,9 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return ourInstance;
     }
-/*ANTLR Tool version 4.5.3 used for code generation does not match the current runtime
- version 4.7.1ANTLR Runtime version 4.5.3 used for parser compilation
- does not match the current runtime version 4.7.1ANTLR Tool version
-  4.5.3 used for code generation does not match the current runtime version
-  4.7.1ANTLR Runtime version 4.5.3 used for parser compilation does not match
-  the current runtime version 4.7.1
-
+/*ANTLR Tool version 4.5.3 used for code generation does not match the current runtime version 4.7.1
+ ANTLR Runtime version 4.5.3 used for parser compilation
+ does not match the current runtime version 4.7.1
   private error
   改成 public
 * */
