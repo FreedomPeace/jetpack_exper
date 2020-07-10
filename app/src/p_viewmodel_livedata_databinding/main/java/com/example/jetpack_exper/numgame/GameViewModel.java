@@ -3,6 +3,7 @@ package com.example.jetpack_exper.numgame;
 import android.app.Application;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -21,19 +22,6 @@ public class GameViewModel extends AndroidViewModel{
         super(application);
         clear();
     }
-
-//    public void setNum(int index, String num) {
-//        if (numbers == null) {
-//            return;
-//        }
-//        String[] value = numbers.getValue();
-//        if (value == null || index >= value.length || TextUtils.isEmpty(num)) {
-//            return;
-//        }
-//        value[index] = num;
-//        numbers.setValue(value);
-//        expressValue();
-//    }
 
     public void clear() {
         num1.setValue("");
@@ -70,11 +58,9 @@ public class GameViewModel extends AndroidViewModel{
         long l2 = System.currentTimeMillis();
         Log.d("getCard36ByInputNum", l2 - l+"");
         if (hasResult) {
-//            Toast.makeText(getApplication(), "bingo ，这个可以算出"+Card36.rightResult+"的值", Toast.LENGTH_LONG)
-//                    .show();
             express.setValue(Card36.express);
         } else {
-//            Toast.makeText(getApplication(), "赶紧换一组牌吧，兄弟们", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "赶紧换一组牌吧，兄弟们", Toast.LENGTH_SHORT).show();
         }
         return express.getValue();
     }

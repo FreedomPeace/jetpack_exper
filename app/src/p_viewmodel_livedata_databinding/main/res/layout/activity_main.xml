@@ -102,20 +102,33 @@
                     app:exampleDimension="24sp"
                     app:exampleDrawable="@android:mipmap/sym_def_app_icon"
                     app:exampleString="@{gameData.express}" />
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="80dip"
                     android:onClick="@{() -> gameData.clear()}"
                     android:text="清空内容" />
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="80dip"
                     android:onClick="@{() -> gameData.expressValue()}"
                     android:text="计算正确表达式" />
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="80dip"
                     android:text="跳转到第二页面" />
+
+                <Button
+                    android:id="@+id/rotate_screen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="80dip"
+                    android:text="旋转屏幕" />
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

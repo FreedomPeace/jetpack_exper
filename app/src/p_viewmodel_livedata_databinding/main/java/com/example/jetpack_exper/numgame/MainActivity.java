@@ -1,6 +1,8 @@
 package com.example.jetpack_exper.numgame;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -29,5 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 .create(GameViewModel.class);
         binding.setGameData(gameViewModel);
         binding.setLifecycleOwner(this);
+        binding.rotateScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                }
+            }
+        });
     }
 }
